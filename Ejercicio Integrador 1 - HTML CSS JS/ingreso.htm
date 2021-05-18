@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="text/javascript" src="./js/script.js" defer="defer"></script>
+    <title>Ingreso</title>
+
+</head>
+<!-- Comentarios: 
+    Incluida validacion mediante HTML
+    Dentro del archivo de JavaScript se encuentra tambien la validacion mediante JS
+    Me parecio interesante hacerlo de ambas formas
+    Mediante CSS y JS se aplican algunas decoraciones de a cuerdo si es valido o no un campo.
+    No se aplica el bacgroundcolor de los inputs mediante javascript cuando se utiliza la funcion de autocompletado, no se me habia ocurrido como hacerlo.
+ -->
+
+<body>
+    <header>
+        <h1>Bienbenido a la pagina de Ingreso</h1>
+    </header>
+    <main>
+        <h3></h3>
+        <form id="frm-userInfo" action="./procesa.php" method="post">
+            <fieldset form="form-userInfo">
+                <legend>Por favor llena este formulario</legend>
+                <label id="lbl-apellido" for="apellido">Apellido:</label>
+                <input type="text" name="apellido" id="inpt-apellido" placeholder="Ingrese su apellido" maxlength="16" pattern="([A-Za-zÁÉÍÓÚáéíóú'\s]+)" title="Letras mayusculas, minusculas y el signo ('), Hasta 16 caracteres"><span></span><br>
+                <label id="lbl-nombres" for="nombres">Nombres:</label>
+                <input type="text" name="nombres" id="inpt-nombres" placeholder="Ingrese su nombre" maxlength="40" pattern="([A-Za-zÁÉÍÓÚáéíóú'\s]+)" title="Letras mayusculas y minusculas y signo (') hasta 40 caracteres"><span></span><br>
+                <label id="lbl-edad" for="edad">Edad:</label>
+                <input type="number" name="edad" id="inpt-edad" placeholder="Ingrese su edad" min="18" max="120" pattern="([18-120])" title="Solo numeros enteros, del 18 al 120"><span></span><br>
+                <label id="lbl-user" for="user">Nombre de Usuario*:</label>
+                <input type="text" name="user" id="inpt-user" placeholder="Ingrese su nombre de usuario" required minlength="5" maxlength="25" pattern="([A-Za-z1-9]+)" title="Letras sin acento y numeros, de 5 a 25 caracteres"><span></span><br>
+                <label id="lbl-email" for="email">E-Mail*:</label>
+                <input type="email" name="email" id="inpt-email" placeholder="Ingrese su e-mail" required><span></span><br>
+                <label id="lbl-tipoUser" for="tipoUser">Tipo de Usuario*:</label>
+                <select name="tipoUser" id="slct-tipoUser" required>
+                    <option value="" selected disabled>---Seleccionar---</option>
+                    <option value="administrador">Administrador</option>
+                    <option value="administrativo">Administrativo</option>
+                    <option value="invitado">Invitado</option>
+                </select><span id="selectSpan"></span><br>
+                <button id="btn-Reset" type="reset">Reset</button>
+                <button id="btn-Submit" type="button" onclick="validate()"><span>Enviar</span></button>
+            </fieldset>
+        </form>
+        <progress id="pbar-progreso" value="0" max="3"></progress>
+        <hr>
+        <div id="div-emptySpace"></div>
+    </main>
+    <footer>
+        <p>Este documento fue armado por Díaz Sebastián Alberto para la case de Laboratorio de Programacion y Lenguajes - Ejercicio integrador 1 ☺</p>
+    </footer>
+</body>
+<script>
+</script>
+
+</html>
