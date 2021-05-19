@@ -33,10 +33,10 @@ function updateBar() {
             break;
         case 2:
             progressBar.setAttribute("value", 2);
-            break
+            break;
         case 3:
             progressBar.setAttribute("value", 3);
-            break
+            break;
         default:
             break;
     }
@@ -49,13 +49,15 @@ fields.forEach(e => {
         } else {
             e.style.backgroundColor = "#ffffff";
         }
-    })
-    e.addEventListener("", function(event) {
+        updateBar();
+    });
+    e.addEventListener("blur", function(event) {
         if (!e.validity.valid) {
             e.style.backgroundColor = "#ffb6c1";
         } else {
             e.style.backgroundColor = "#ffffff";
         }
+        updateBar();
     });
 });
 
@@ -87,30 +89,30 @@ function validate() {
     let camposConErrores = "";
     if (!apellido.value.match(regExText)) {
         camposConErrores += "Apellido\n";
-    };
+    }
     if (!nombres.value.match(regExText)) {
         camposConErrores += "Nombres\n";
-    };
+    }
     if (!edad.value.match(regExNumber)) {
         camposConErrores += "Edad\n";
-    };
+    }
     if (edad.value != "" && (edad.value < 18) || edad.value > 120) {
         camposConErrores += "Edad\n";
     }
     if (!user.value.match(regExUser)) {
         camposConErrores += "Usuario\n";
-    };
+    }
     if (!email.value.match(regExMail)) {
         camposConErrores += "Email\n";
-    };
+    }
     if (!tipoUser.options[tipoUser.selectedIndex].text.match(regExTipoUser)) {
         camposConErrores += "Tipo Usuario\n";
-    };
+    }
     if (camposConErrores.trim() != "") {
         alert("Los siguiente campos contienen errores:\n" + camposConErrores);
     }
     let requiredIsValid = (user.validity.valid && email.validity.valid && tipoUser.validity.valid);
-    let noRequiredIsValid = (apellido.validity.valid && nombres.validity.valid && edad.validity.valid)
+    let noRequiredIsValid = (apellido.validity.valid && nombres.validity.valid && edad.validity.valid);
     if (requiredIsValid) {
         if (noRequiredIsValid) {
             formulario.submit();
