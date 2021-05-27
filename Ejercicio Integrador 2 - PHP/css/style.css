@@ -1,0 +1,96 @@
+header {
+    text-align: center;
+    background-color: lightsteelblue;
+    height: 100px;
+    padding-top: 1em;
+}
+
+label {
+    display: inline-block;
+    width: 170px;
+    height: 25px;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 200px;
+    height: 20px;
+    margin-bottom: 5px;
+    border-radius: 2px;
+}
+
+input:focus:invalid:required,
+input:hover:invalid:required,
+input:invalid:required {
+    outline: red;
+    border-color: red;
+}
+
+input:not(:placeholder-shown):valid {
+    outline: lightskyblue;
+    border-color: lightskyblue;
+}
+
+input:hover,
+input:focus {
+    box-shadow: 1px 1px 8px black;
+}
+
+select {
+    height: 23px;
+    width: 208px;
+}
+
+select:hover,
+select:focus {
+    box-shadow: 1px 1px 8px black;
+}
+
+button {
+    font-weight: bold;
+    width: 80px;
+    margin-top: 5px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+button:active {
+    transform: translateY(0.5px);
+}
+
+button:hover,
+button:focus {
+    background-color: lightgreen;
+    box-shadow: 1px 2px 5px black;
+}
+
+footer {
+    box-sizing: border-box;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #f0f0f0;
+    border-color: black;
+    border-style: solid;
+}
+
+
+/* Provicional. Para que evitar que se oculte algo detras del footer */
+
+#div-emptySpace {
+    height: 100px;
+}
+
+fieldset {
+    background-color: #eeeeee;
+}
+
+legend {
+    border-style: solid;
+    border-color: #999999;
+    border-width: 2px;
+    background-color: #ddd;
+}
